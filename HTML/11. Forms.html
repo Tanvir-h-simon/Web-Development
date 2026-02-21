@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Registration</h1>
+    <form action="/server" method="post"> 
+        <!-- method="post": data will be sent in the request body. 
+        method="get": data will be sent in the URL -->
+
+        <!--<input type="text">	Displays a single-line text input field
+        <input type="radio">	Displays a radio button (for selecting one of many choices)
+        <input type="checkbox">	Displays a checkbox (for selecting zero or more of many choices)
+        <input type="submit">	Displays a submit button (for submitting the form)
+        <input type="button">	Displays a clickable button-->
+        <div>
+            <label for="name"><b>Name:</b></label>
+            <input type="text" name="name"><br><br>
+        </div>
+        <div>
+            <label for="gender"><b>Gender:</b></label><br><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+        </div>
+        <div>
+            <label for="country"><b>Country:</b></label>
+            <select id="country" name="country">
+                <option value="">Select Country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+                <option value="bangladesh">Bangladesh</option>  
+            </select><br><br>
+        </div>
+        <div>
+            <label for="age"><b>Age:</b></label>
+            <input type="range" id="age" name="age" min="18" max="80" step="5"> <br><br>
+        </div>
+        <div>
+            <label for="email"><b>Email:</b></label>
+            <input type="email" id="email" name="email"><br><br>
+        </div>
+        <div>
+            <label for="password"><b>Password:</b></label>
+            <input type="password" id="password" name="password"><br><br>
+        </div>
+        <div>
+            <label for="bio"><b>Bio:</b></label><br><br>
+            <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Tell us about yourself..."></textarea><br><br>
+        </div>
+        <div>
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember"><b>Remember me</b></label><br><br>
+        </div>
+        <div>
+            <button type="submit"><b>Submit</b></button>
+            <button type="reset"><b>Reset</b></button>
+        </div>
+</body>
+</html>

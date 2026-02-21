@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <table border="Black">
+        <caption>Sample Table</caption>
+        <thead>
+            <tr> <!-- tr: Display table row-->
+                <th>Name</th> <!-- th: Display table header -->
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td> <!-- td: Display table data --> 
+                <td>30</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>25</td>
+                <td>Los Angeles</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>35</td>
+                <td>Chicago</td>
+            </tr>
+            <tr>
+                <td>Diana</td>
+                <td rowspan="2">28</td> <!-- rowspan: Spans 2 rows vertically -->
+                <td>Miami</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <!-- Age cell is merged from row above -->
+                <td>Seattle</td>
+            </tr>
+            <tr>
+                <td colspan="2">Total People</td> <!-- colspan: Spans 2 columns horizontally -->
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
