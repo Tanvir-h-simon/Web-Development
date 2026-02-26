@@ -1,0 +1,32 @@
+h1 {
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: green; */
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 20px;
+    display: inline-block; /* Behaves like an inline element*/
+}
+
+div {
+    height: 100px;
+    width: 700px;
+    background-color: lightblue;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: black; */
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+button {
+    border: black solid 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: lightgray;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+}

@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    margin: 20px 0;
+    color: #333;
+}
+
+.info {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Responsive Navigation - Desktop First */
+.navbar {
+    background-color: #2c3e50;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    padding: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #3498db;
+}
+
+/* Responsive Grid Layout */
+.grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Responsive Flex Cards */
+.flex-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Screen Size Indicator */
+.size-indicator {
+    background-color: #2ecc71;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.mobile-only,
+.tablet-only,
+.desktop-only {
+    display: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive Text */
+.text-container {
+    background-color: #e74c3c;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.responsive-text {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/* Desktop (default styles above are for desktop) */
+.desktop-only {
+    display: block;
+}
+
+/* Tablet (600px to 900px) */
+@media screen and (max-width: 900px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-responsive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flex-cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .responsive-text {
+        font-size: 20px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .tablet-only {
+        display: block;
+    }
+
+    .size-indicator {
+        background-color: #f39c12;
+    }
+}
+
+/* Mobile (less than 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #34495e;
+    }
+
+    .grid-responsive {
+        grid-template-columns: 1fr;
+    }
+
+    .flex-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .responsive-text {
+        font-size: 16px;
+    }
+
+    .desktop-only,
+    .tablet-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .size-indicator {
+        background-color: #9b59b6;
+    }
+}
+
+/* Large Desktop (more than 1200px) */
+@media screen and (min-width: 1200px) {
+    .grid-responsive {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .responsive-text {
+        font-size: 28px;
+    }
+}
+
+/* Print Media Query */
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .navbar,
+    .size-indicator {
+        display: none;
+    }
+}

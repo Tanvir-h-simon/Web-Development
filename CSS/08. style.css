@@ -1,0 +1,123 @@
+/* The CSS Grid Layout (commonly called Grid) is a 2-dimensional layout system in CSS.
+If Flexbox = 1D (row OR column)
+Then Grid = 2D (row AND column together)*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Grid Items */
+.grid-item {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Basic Grid - 3 Columns */
+.grid-basic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #3498db;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Grid with Gap */
+.grid-gap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #e74c3c;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Grid Spanning */
+.grid-span {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #2ecc71;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.span-col {
+    grid-column: span 2;
+}
+
+.span-row {
+    grid-row: span 2;
+}
+
+/* Grid Template Areas */
+.grid-template-areas {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    gap: 10px;
+    background-color: #f39c12;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 400px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Auto-Fill Grid */
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    background-color: #9b59b6;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Grid Alignment */
+.grid-align {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 100px);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    background-color: #1abc9c;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 400px;
+}

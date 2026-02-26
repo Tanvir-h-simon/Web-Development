@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .row > div {
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .row .row > div {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Bootstrap Grid Layout</h1>
+        
+        <!-- Basic 12-Column Grid -->
+        <h3 class="text-primary mt-4">1. Basic 12-Column Grid</h3>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">Column 1</div>
+            <div class="col-12 col-md-6 col-lg-4">Column 2</div>
+            <div class="col-12 col-md-6 col-lg-4">Column 3</div>
+        </div>
+    </div>
+
+    <!-- Equal Width Columns -->
+    <div class="container mt-5">
+        <h3 class="text-primary">2. Equal Width Columns</h3>
+        <div class="row">
+            <div class="col">Column 1</div>
+            <div class="col">Column 2</div>
+            <div class="col">Column 3</div>
+        </div>
+    </div>
+
+    <!-- Different Column Sizes -->
+    <div class="container mt-5">
+        <h3 class="text-primary">3. Different Column Sizes</h3>
+        <div class="row">
+            <div class="col-3">col-3</div>
+            <div class="col-6">col-6</div>
+            <div class="col-3">col-3</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">col-4</div>
+            <div class="col-8">col-8</div>
+        </div>
+    </div>
+
+    <!-- Responsive Breakpoints -->
+    <div class="container mt-5">
+        <h3 class="text-primary">4. Responsive Breakpoints</h3>
+        <p class="text-muted">Resize browser to see changes</p>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <strong>xs:</strong> 12, <strong>sm:</strong> 6, <strong>md:</strong> 4, <strong>lg:</strong> 3
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <strong>xs:</strong> 12, <strong>sm:</strong> 6, <strong>md:</strong> 4, <strong>lg:</strong> 3
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <strong>xs:</strong> 12, <strong>sm:</strong> 6, <strong>md:</strong> 4, <strong>lg:</strong> 3
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <strong>xs:</strong> 12, <strong>sm:</strong> 6, <strong>md:</strong> 4, <strong>lg:</strong> 3
+            </div>
+        </div>
+    </div>
+
+    <!-- Column Offset -->
+    <div class="container mt-5">
+        <h3 class="text-primary">5. Column Offset</h3>
+        <div class="row">
+            <div class="col-4">col-4</div>
+            <div class="col-4 offset-4">col-4 offset-4</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3 offset-3">col-3 offset-3</div>
+            <div class="col-3 offset-3">col-3 offset-3</div>
+        </div>
+    </div>
+
+    <!-- Alignment -->
+    <div class="container mt-5">
+        <h3 class="text-primary">6. Vertical Alignment</h3>
+        <div class="row align-items-start" style="height: 150px; background-color: #f8f9fa;">
+            <div class="col">align-items-start</div>
+            <div class="col">align-items-start</div>
+        </div>
+        <div class="row align-items-center mt-3" style="height: 150px; background-color: #f8f9fa;">
+            <div class="col">align-items-center</div>
+            <div class="col">align-items-center</div>
+        </div>
+        <div class="row align-items-end mt-3" style="height: 150px; background-color: #f8f9fa;">
+            <div class="col">align-items-end</div>
+            <div class="col">align-items-end</div>
+        </div>
+    </div>
+
+    <!-- Horizontal Alignment -->
+    <div class="container mt-5">
+        <h3 class="text-primary">7. Horizontal Alignment</h3>
+        <div class="row justify-content-start">
+            <div class="col-4">justify-content-start</div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-4">justify-content-center</div>
+        </div>
+        <div class="row justify-content-end mt-3">
+            <div class="col-4">justify-content-end</div>
+        </div>
+        <div class="row justify-content-between mt-3">
+            <div class="col-4">justify-content-between</div>
+            <div class="col-4">justify-content-between</div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Nested Grid -->
+    <div class="container mt-5">
+        <h3 class="text-primary">8. Nested Grid Example</h3>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <strong>Parent Column 1</strong>
+                <div class="row">
+                    <div class="col-6">Nested 1</div>
+                    <div class="col-6">Nested 2</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <strong>Parent Column 2</strong>
+                <div class="row">
+                    <div class="col-4">Nested 3</div>
+                    <div class="col-4">Nested 4</div>
+                    <div class="col-4">Nested 5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto Layout Columns -->
+    <div class="container mt-5">
+        <h3 class="text-primary">9. Auto Layout Columns</h3>
+        <div class="row">
+            <div class="col">Auto width 1</div>
+            <div class="col-6">Fixed col-6</div>
+            <div class="col">Auto width 2</div>
+        </div>
+    </div>
+
+    <!-- Order -->
+    <div class="container mt-5 mb-5">
+        <h3 class="text-primary">10. Column Ordering</h3>
+        <div class="row">
+            <div class="col order-3">First in DOM (order-3)</div>
+            <div class="col order-1">Second in DOM (order-1)</div>
+            <div class="col order-2">Third in DOM (order-2)</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

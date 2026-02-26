@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Flexbox: Flexible Box Layout. It allows you to design a flexible responsive layout structure without using float or positioning. */
+/* Flex Container */
+.flex-container {
+    display: flex;
+    background-color: #3498db;
+    padding: 10px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* Flex Items */
+.flex-item {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Flex Direction - Column */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    background-color: #e74c3c;
+    padding: 10px;
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 300px;
+}
+
+/* Flex Center - Both axes */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2ecc71;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 150px;
+}
+
+/* Flex Space Between */
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f39c12;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Flex Wrap - Wraps items to next line */
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #9b59b6;
+    padding: 10px;
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 500px;
+}
+
+/* Align Items - Stretch (default) */
+.flex-align-stretch {
+    display: flex;
+    align-items: stretch;
+    background-color: #1abc9c;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 120px;
+    gap: 10px;
+}
+
+/* Align Items - Flex Start */
+.flex-align-start {
+    display: flex;
+    align-items: flex-start;
+    background-color: #34495e;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 120px;
+    gap: 10px;
+}
+
+/* Align Items - Flex End */
+.flex-align-end {
+    display: flex;
+    align-items: flex-end;
+    background-color: #e67e22;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 120px;
+    gap: 10px;
+}

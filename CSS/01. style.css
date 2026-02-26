@@ -1,0 +1,34 @@
+/* universal selector */
+* { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Element Selector */
+h1 {
+    color: red;
+    background-color: lightgray;
+    text-align: center; /* Relative to the parent element */
+    text-decoration: underline;
+    letter-spacing: normal;
+}
+
+p {
+    /* color: green; */
+    color: rgb(0, 255, 0);
+    /* color: #00ff00; */
+    text-align: justify;
+    /* font-weight: 100; */
+    /* font-weight: bold; */
+    font-weight: normal;
+    /* line-height: normal; */
+    line-height: 2.5;
+    font-size: 20px;
+    /* font-family: Arial; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    color: white;
+    background-color: blueviolet;
+    font-size: 16px;
+}

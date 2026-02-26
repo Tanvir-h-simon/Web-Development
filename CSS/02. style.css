@@ -1,0 +1,111 @@
+/* Universal selector */
+* { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Type selector */
+h1, h3 {
+    color: #b92b27;
+}
+
+/* ID selector */
+#login {
+    background-color: #b92b27;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signup {
+    background-color: #1565c0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Class selector */
+.upvote {
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Descendant selector */
+p a { 
+    color: #1565c0;
+}
+
+nav ul li {
+    color: #b92b27;
+    list-style-type: square;
+}
+
+/* Sibling selector */
+.upvote + .answer {
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Child selector */
+div > input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Attribute selector */
+input[type="text"] {
+    width: 150px;
+}
+
+input[type="password"] {
+    width: 150px;
+}
+
+/* Pseudo class: Hover */
+.upvote:hover,.answer:hover,
+button:hover {
+    background-color: black !important;
+    color: white;
+}
+
+/* Pseudo class: Active */
+p:active {
+    font-weight: bold;
+    color: #b92b27;
+}
+
+/* Pseudo element */
+h1::first-letter {
+    font-size: 175%;
+    color: #b92b27;
+}
+
+h3::selection {
+    background-color: #b92b27;
+    color: white;
+}
+
+/* Specificity: The more specific selector will take precedence over the less specific one. Example, id > class > element.
+Cascading and Specificity: The styles defined later will override the earlier ones if they have the same specificity. */
+.upvote {
+    background-color:#1565c0; /* This will override the previous background color */
+}
+
+/* !important: This will override all other styles, regardless of specificity or order. */
+.upvote {
+    background-color: #b92b27 !important; 
+}
+
+/* Inheritance: The color property will be inherited by the child elements (except button and input type). */

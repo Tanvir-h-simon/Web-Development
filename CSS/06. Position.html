@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property</title>
+    <link rel="stylesheet" href="06. style.css">
+</head>
+<body>
+    <h1>CSS Position Property Demo</h1>
+
+    <!-- Static Position (Default) -->
+    <div class="section">
+        <h2>1. Static Position (Default)</h2>
+        <p>Static is the default position. Elements flow in normal document order.</p>
+        <div class="container">
+            <div class="box static-box">Static Box</div>
+            <p>This box follows the normal document flow. Top, bottom, left, right properties have no effect.</p>
+        </div>
+    </div>
+
+    <!-- Relative Position -->
+    <div class="section">
+        <h2>2. Relative Position</h2>
+        <p>Relative positioning moves the element relative to its normal position.</p>
+        <div class="container">
+            <div class="box">Normal Box</div>
+            <div class="box relative-box">Relative Box (moved 30px right, 20px down)</div>
+            <div class="box">Normal Box</div>
+        </div>
+    </div>
+
+    <!-- Absolute Position -->
+    <div class="section">
+        <h2>3. Absolute Position</h2>
+        <p>Absolute positioning removes the element from normal flow and positions it relative to its nearest positioned ancestor.</p>
+        <div class="container relative-parent">
+            <p>This is a relatively positioned parent container.</p>
+            <div class="box absolute-box">Absolute Box (positioned at top-right)</div>
+        </div>
+    </div>
+
+    <!-- Fixed Position -->
+    <div class="section">
+        <h2>4. Fixed Position</h2>
+        <p>Fixed positioning removes the element from normal flow and positions it relative to the viewport. It stays in place when scrolling.</p>
+        <div class="container">
+            <p>Scroll down to see the fixed box stay in place at the bottom-right of the screen.</p>
+        </div>
+    </div>
+
+    <!-- Fixed positioned element -->
+    <div class="box fixed-box">Fixed Box (bottom-right corner)</div>
+
+    <!-- Extra content for scrolling -->
+    <div class="spacer"></div>
+</body>
+</html>
