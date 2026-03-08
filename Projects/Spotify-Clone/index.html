@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="https://www.scdn.co/i/_global/favicon.png"> -->
+    <link rel="icon" href="./assets/logo.png">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ─── Top Navigation Bar  ─── -->
+    <nav class="top-navbar">
+        <div class="top-nav-left">
+            <div class="spotify-logo-container" title="Spotify">
+                <img src="./assets/Spotify dark mode.jpg" alt="Spotify Logo" class="spotify-logo">
+            </div>
+        </div>
+        
+        <div class="top-nav-center">
+            <div class="home-icon" data-tooltip="Home" data-tooltip-pos="bottom">
+                <i class="fa-solid fa-house"></i>
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="What do you want to play?" class="search-input">
+                <div class="shortcut-group">
+                    <kbd class="search-shortcut">Ctrl</kbd>
+                    <kbd class="search-shortcut">Shift</kbd>
+                    <kbd class="search-shortcut">L</kbd>
+                </div>
+                <span class="search-separator">|</span>
+                <div class="browse-btn" data-tooltip="Browse" data-tooltip-pos="bottom">
+                    <i class="fa-solid fa-grip"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top-nav-right">
+            <button class="badge nav-item premium-btn" data-tooltip="Upgrade premium" data-tooltip-pos="bottom">Explore Premium</button>
+            <button class="badge nav-item dark-badge"><span class="install-icon"><i class="fa-solid fa-arrow-down"></i></span> Install App</button>
+            <i class="fa-regular fa-bell nav-item" data-tooltip="Notifications" data-tooltip-pos="bottom"></i>
+            <i class="fa-solid fa-user-group nav-item" data-tooltip="Friend Activity" data-tooltip-pos="bottom"></i>
+            <div class="user-profile" data-tooltip="Profile" data-tooltip-pos="bottom">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── Mobile Search Overlay ─── -->
+    <div class="mobile-search-overlay" id="mobile-search-overlay">
+        <div class="mobile-search-header">
+            <i class="fa-solid fa-arrow-left mobile-search-back" id="mobile-search-back"></i>
+            <div class="mobile-search-field">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="What do you want to play?" class="mobile-search-input" id="mobile-search-input">
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Main Layout (Sidebar + Content + Right Sidebar + Player) ─── -->
+    <div class="main">
+            <!-- ─── Left Sidebar ─── -->
+        <div class="sidebar">
+            <div class="library">
+                <div class="options">
+                    <div class="library-option nav-option">
+                        <i class="fa-solid fa-swatchbook library-icon" id="collapse-btn" data-tooltip="Collapse Your Library" data-tooltip-pos="bottom"></i>
+                        <a href="#">Your Library</a>
+                    </div>
+                    <div class="library-icons">
+                        <i class="fa-solid fa-plus" data-tooltip="Create playlist or folder" data-tooltip-pos="bottom"></i>
+                        <i class="fa-solid fa-arrow-right-long" data-tooltip="Expand Your Library" data-tooltip-pos="bottom"></i>
+                    </div>
+                </div>
+
+                <div class="library-scroll">
+                <div class="library-box">
+                    <p class="lib-box-content-1">Create your own playlist </p>
+                    <p class="lib-box-content-2">It's easy, we'll help you</p>
+                    <button class="badge">Create Playlist</button>
+                </div>
+                <div class="library-box">
+                    <p class="lib-box-content-1">Let's find some podcasts to follow</p>
+                    <p class="lib-box-content-2">We'll keep you updated on new podcasts</p>
+                    <button class="badge">Browse Podcasts</button>
+                </div>
+                </div>
+            </div>
+        </div>
+            <!-- ─── Main Content Area ─── -->
+        <div class="content">
+                <div class="section-header">
+                    <h2>Recently played</h2>
+                </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="./assets/music/Aj Ei Brishtir Kanna.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Aj Ei Brishtir Kanna</p>
+                    <p class="card-description">A soulful Bengali melody that touches the heart</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Jibonanondo.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Jibonanondo</p>
+                    <p class="card-description">Beautiful composition that captures life's essence</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Agar Tum Saath Ho.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Agar Tum Saath Ho</p>
+                    <p class="card-description">From Tamasha - A romantic masterpiece</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Let Her Go.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Let Her Go</p>
+                    <p class="card-description">Passenger's heartfelt acoustic hit</p>
+                </div>
+                <div class="forward-icon-overlay">
+                    <img src="./assets/forward_icon.png" alt="Show All">
+                </div>
+            </div>
+                <div class="section-header">
+                    <h2>Trending Songs</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="./assets/music/(Everything I Do) I Do It For You.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">(Everything I Do) I Do It For You</p>
+                    <p class="card-description">Bryan Adams - Timeless love ballad</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Take Me Home, Country Roads.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Take Me Home, Country Roads</p>
+                    <p class="card-description">John Denver's iconic American classic</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Lag Ja Gale Se Phir.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Lag Ja Gale Se Phir</p>
+                    <p class="card-description">Legendary Lata Mangeshkar's timeless melody</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Ami Shunechi Sedin Tumi.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Ami Shunechi Sedin Tumi</p>
+                    <p class="card-description">Classic Bengali romantic song</p>
+                </div>
+                <div class="forward-icon-overlay">
+                    <img src="./assets/forward_icon.png" alt="Show All">
+                </div>
+            </div>
+                <div class="section-header">
+                    <h2>Popular albums and singles</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="./assets/music/Agar Tum Saath Ho.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Agar Tum Saath Ho</p>
+                    <p class="card-description">From Tamasha - A romantic masterpiece</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Let Her Go.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Let Her Go</p>
+                    <p class="card-description">Passenger's heartfelt acoustic hit</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Jibonanondo.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Jibonanondo</p>
+                    <p class="card-description">Beautiful composition that captures life's essence</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/music/Tum Jo Aaye.jpg" class="card-img" alt="Card Image">
+                    <p class="card-title">Tum Jo Aaye</p>
+                    <p class="card-description">Romantic melody from Once Upon a Time</p>
+                </div>
+                <div class="forward-icon-overlay">
+                    <img src="./assets/forward_icon.png" alt="Show All">
+                </div>
+            </div>
+                <div class="section-header">
+                    <h2>Popular Artists</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+            <div class="card-container">
+                <div class="artist-card">
+                    <img src="./assets/artists/Atif Aslam.jpg" class="artist-img" alt="Artist Image">
+                    <p class="artist-name">Atif Aslam</p>
+                    <p class="artist-label">Artist</p>
+                </div>
+                <div class="artist-card">
+                    <img src="./assets/artists/Coldplay.jpg" class="artist-img" alt="Artist Image">
+                    <p class="artist-name">Coldplay</p>
+                    <p class="artist-label">Artist</p>
+                </div>
+                <div class="artist-card">
+                    <img src="./assets/artists/Niaz Mohammad Chowdhury.jpg" class="artist-img" alt="Artist Image">
+                    <p class="artist-name">Niaz Mohammad Chowdhury</p>
+                    <p class="artist-label">Artist</p>
+                </div>
+                <div class="artist-card">
+                    <img src="./assets/artists/Rahat Fateh Ali Khan.jpg" class="artist-img" alt="Artist Image">
+                    <p class="artist-name">Rahat Fateh Ali Khan</p>
+                    <p class="artist-label">Artist</p>
+                </div>
+                <div class="forward-icon-overlay">
+                    <img src="./assets/forward_icon.png" alt="Show All">
+                </div>
+            </div>
+                <div class="section-header">
+                    <h2>Featured Charts</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+            <div class="card-container">
+                <div class="chart-card">
+                    <img src="./assets/Top 50 - Global.jpg" class="chart-img" alt="Top 50 Global">
+                    <p class="chart-title">Top 50 - Global</p>
+                    <p class="chart-description">Your daily update of the most played tracks right now</p>
+                </div>
+                <div class="chart-card">
+                    <img src="./assets/Top Songs - Global.jpg" class="chart-img" alt="Top Songs Global">
+                    <p class="chart-title">Top Songs - Global</p>
+                    <p class="chart-description">The most streamed songs across the world today</p>
+                </div>
+                <div class="chart-card">
+                    <img src="./assets/Top Songs - USA.jpg" class="chart-img" alt="Top Songs USA">
+                    <p class="chart-title">Top Songs - USA</p>
+                    <p class="chart-description">The biggest songs right now in the United States</p>
+                </div>
+                <div class="chart-card">
+                    <img src="./assets/Viral 50 - Global.jpg" class="chart-img" alt="Viral 50 Global">
+                    <p class="chart-title">Viral 50 - Global</p>
+                    <p class="chart-description">Your daily update of the most viral tracks right now</p>
+                </div>
+                <div class="forward-icon-overlay">
+                    <img src="./assets/forward_icon.png" alt="Show All">
+                </div>
+            </div>
+                <!-- Footer -->
+                <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">For the Record</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Communities</h3>
+                            <ul>
+                                <li><a href="#">For Artists</a></li>
+                                <li><a href="#">Developers</a></li>
+                                <li><a href="#">Advertising</a></li>
+                                <li><a href="#">Investors</a></li>
+                                <li><a href="#">Vendors</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Useful links</h3>
+                            <ul>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Free Mobile App</a></li>
+                                <li><a href="#">Popular by Country</a></li>
+                                <li><a href="#">Import your music</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Spotify Plans</h3>
+                            <ul>
+                                <li><a href="#">Premium Individual</a></li>
+                                <li><a href="#">Premium Duo</a></li>
+                                <li><a href="#">Premium Family</a></li>
+                                <li><a href="#">Premium Student</a></li>
+                                <li><a href="#">Spotify Free</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/spotify" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/spotify" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/Spotify" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <a href="#">Legal</a>
+                        <a href="#">Safety & Privacy Center</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">About Ads</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>© 2026 Spotify AB</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+            <!-- ─── Right Sidebar ─── -->
+        <div class="right-sidebar">
+            <div class="now-playing-header">
+                <i class="fa-solid fa-bars-staggered" data-tooltip="Hide Playing View" data-tooltip-pos="bottom"></i>
+                <span>Aj Ei Brishtir Kanna</span>
+                <div class="now-playing-actions">
+                    <i class="fa-solid fa-ellipsis" data-tooltip="More Options" data-tooltip-pos="bottom"></i>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center" data-tooltip="Expand Playing View" data-tooltip-pos="bottom"></i>
+                </div>
+            </div>
+            <div class="right-sidebar-scroll">
+            <div class="now-playing-cover">
+                <img src="./assets/music/Aj Ei Brishtir Kanna.jpg" alt="Now Playing Cover">
+            </div>
+
+            <div class="now-playing-info">
+                <h2 class="now-playing-title">Aj Ei Brishtir Kanna</h2>
+                <p class="now-playing-artist">Niaz Mohammad Chowdhury</p>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-header">
+                    <h3>Credits</h3>
+                    <a href="#" class="show-all-credits">Show all</a>
+                </div>
+                
+                <div class="credit-item">
+                    <div class="credit-info">
+                        <p class="credit-name">Niaz Mohammad Chowdhury</p>
+                        <p class="credit-role">Main Artist • ...</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+
+                <div class="credit-item">
+                    <div class="credit-info">
+                        <p class="credit-name">Lucky Akhand</p>
+                        <p class="credit-role">Composer</p>
+                    </div>
+                </div>
+
+                <div class="credit-item">
+                    <div class="credit-info">
+                        <p class="credit-name">Kaosar Ahmed</p>
+                        <p class="credit-role">Lyricist</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+            <!-- ─── Music Player Bar ─── -->
+        <div class="music-player">
+            <div class="player-left">
+                <span class="player-album-art-wrap">
+                    <img src="./assets/music/Aj Ei Brishtir Kanna.jpg" alt="Album Art" class="player-album-art">
+                </span>
+                <div class="player-song-info">
+                    <p class="player-song-name">Aj Ei Brishtir Kanna</p>
+                    <p class="player-artist-name">Niaz Mohammad Chowdhury</p>
+                </div>
+                <i class="fa-regular fa-heart player-icon" data-tooltip="Save to Your Liked Songs"></i>
+            </div>
+            <div class="player-center">
+                <div class="player-controls">
+                    <i class="fa-solid fa-shuffle player-control-icon" data-tooltip="Enable Shuffle"></i>
+                    <i class="fa-solid fa-backward-step player-control-icon" data-tooltip="Previous"></i>
+                    <i class="fa-solid fa-circle-play player-control-icon play-btn" data-tooltip="Play"></i>
+                    <i class="fa-solid fa-forward-step player-control-icon" data-tooltip="Next"></i>
+                    <i class="fa-solid fa-repeat player-control-icon" data-tooltip="Enable Repeat"></i>
+                </div>
+                <div class="player-progress">
+                    <span class="player-time">0:17</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <span class="player-time">4:19</span>
+                </div>
+            </div>
+            <div class="player-right">
+                <i class="fa-solid fa-microphone-lines player-icon" data-tooltip="Lyrics"></i>
+                <i class="fa-solid fa-list player-icon" data-tooltip="Queue"></i>
+                <i class="fa-solid fa-desktop player-icon" data-tooltip="Connect to a device"></i>
+                <i class="fa-solid fa-volume-high player-icon" data-tooltip="Mute"></i>
+                <div class="volume-bar">
+                    <div class="volume-bar-fill"></div>
+                </div>
+                <i class="fa-solid fa-compress player-icon" data-tooltip="Open Miniplayer"></i>
+                <i class="fa-solid fa-expand player-icon" data-tooltip="Open Fullscreen"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Drawer Overlay (Tablet Right Sidebar) ─── -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- ─── Bottom Navigation Bar (Mobile Only) ─── -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <div class="bottom-nav-item active" id="bottom-home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </div>
+        <div class="bottom-nav-item" id="bottom-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+        </div>
+        <div class="bottom-nav-item" id="bottom-library">
+            <i class="fa-solid fa-swatchbook"></i>
+            <span>Your Library</span>
+        </div>
+    </nav>
+
+    <!-- ─── JavaScript ─── -->
+<script>
+    const content = document.querySelector('.content');
+    let scrollTimer = null;
+
+    content.addEventListener('scroll', () => {
+        content.classList.add('is-scrolling');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            content.classList.remove('is-scrolling');
+        }, 1500);
+    });
+
+    const rightSidebarScroll = document.querySelector('.right-sidebar-scroll');
+    let rightScrollTimer = null;
+
+    rightSidebarScroll.addEventListener('scroll', () => {
+        rightSidebarScroll.classList.add('is-scrolling');
+        clearTimeout(rightScrollTimer);
+        rightScrollTimer = setTimeout(() => {
+            rightSidebarScroll.classList.remove('is-scrolling');
+        }, 1500);
+    });
+
+    // Collapse Your Library
+    const collapseBtn = document.getElementById('collapse-btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    collapseBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        const isCollapsed = sidebar.classList.contains('collapsed');
+        collapseBtn.setAttribute('data-tooltip', isCollapsed ? 'Expand Your Library' : 'Collapse Your Library');
+    });
+
+    // Mobile Search Overlay
+    const mobileSearchOverlay = document.getElementById('mobile-search-overlay');
+    const mobileSearchBack = document.getElementById('mobile-search-back');
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+
+    mobileSearchBack.addEventListener('click', () => {
+        mobileSearchOverlay.classList.remove('active');
+    });
+
+    // Right Sidebar Drawer (tablet & small laptop)
+    const rightSidebar = document.querySelector('.right-sidebar');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const playerAlbumArtWrap = document.querySelector('.player-album-art-wrap');
+    const hidePlayingBtn = document.querySelector('.fa-bars-staggered');
+
+    function openDrawer() {
+        rightSidebar.classList.add('drawer-open');
+        drawerOverlay.classList.add('active');
+    }
+
+    function closeDrawer() {
+        rightSidebar.classList.remove('drawer-open');
+        drawerOverlay.classList.remove('active');
+    }
+
+    playerAlbumArtWrap.addEventListener('click', () => {
+        // Only act as drawer toggle on screens where sidebar is a drawer (≤1200px)
+        if (window.innerWidth <= 1200) {
+            rightSidebar.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+        }
+    });
+
+    hidePlayingBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Close drawer on resize if going back to full desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1200) {
+            closeDrawer();
+        }
+    });
+
+    // Bottom Navigation Active State
+    const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+    const bottomSearch = document.getElementById('bottom-search');
+
+    bottomNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            bottomNavItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+
+    // Bottom nav search also opens the mobile search overlay
+    bottomNavItems.forEach(item => {
+        if (item.id === 'bottom-search') {
+            item.addEventListener('click', () => {
+                mobileSearchOverlay.classList.add('active');
+                setTimeout(() => mobileSearchInput.focus(), 100);
+            });
+        }
+    });
+</script>
+</body>
+</html>
