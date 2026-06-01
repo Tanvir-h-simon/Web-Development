@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>DOM: Document Object Model</h1>
+    </div>
+    <div>
+        <p> When a browser loads an HTML page, it doesn't just display it - it converts your HTML into a live, 
+            programmable object that JavaScript can read and modify. That object is called the DOM (Document Object Model). </p>
+        <p> For example, the following HTML:</p>
+        <pre><code>
+            &lt;html&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Hello&lt;/h1&gt;
+                    &lt;p&gt;World&lt;/p&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </code></pre>
+        <p>This becomes:</p>
+        <pre>
+            Document // Parent of all nodes
+                └── html // Root element
+                    └── body // Child of html
+                        ├── h1 → "Hello" // Child of body 
+                        └── p  → "World" // Child of body
+        </pre>
+    </div>
+    <div> 
+        <button id="learnBtn">Learn More</button>
+    </div>
+    <div id = "container-1">
+        <p>This is a paragraph inside the container div.</p>
+    </div>
+    <div class="container-2">
+        <p>This is another paragraph outside the container div.</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

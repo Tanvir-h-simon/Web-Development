@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Georgia', serif;
+}
+
+.container {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 680px;
+    width: 100%;
+}
+
+h1 {
+    color: #e0e0e0;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    opacity: 0.7;
+}
+
+#quote-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 48px 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+#quote-box::before {
+    content: '\201C';
+    font-size: 8rem;
+    color: #e94560;
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    line-height: 1;
+    font-family: Georgia, serif;
+}
+
+#quote {
+    color: #f0f0f0;
+    font-size: 1.35rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+#author {
+    color: #e94560;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#author::before {
+    content: '— ';
+}
+
+#generate-quote {
+    background: #e94560;
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 24px rgba(233, 69, 96, 0.4);
+}
+
+#generate-quote:hover {
+    background: #c73652;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(233, 69, 96, 0.55);
+}
+
+#generate-quote:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    #quote-box {
+        padding: 36px 24px;
+    }
+
+    #quote {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}

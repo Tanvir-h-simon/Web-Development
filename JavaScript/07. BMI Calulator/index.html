@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmi-form">
+
+            <div class="unit-selectors">
+                <div class="unit-group">
+                    <label for="weight-unit">Weight Unit</label>
+                    <select id="weight-unit">
+                        <option value="kg">Kilograms (kg)</option>
+                        <option value="lbs">Pounds (lbs)</option>
+                    </select>
+                </div>
+                <div class="unit-group">
+                    <label for="height-unit">Height Unit</label>
+                    <select id="height-unit">
+                        <option value="cm">Centimeters (cm)</option>
+                        <option value="m">Meters (m)</option>
+                        <option value="in">Inches (in)</option>
+                        <option value="ft">Feet (ft)</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="weight">Weight (<span id="weight-unit-label">kg</span>):</label>
+            <input type="number" id="weight" required min="0" step="0.1">
+
+            <div id="height-single-group">
+                <label for="height">Height (<span id="height-unit-label">cm</span>):</label>
+                <input type="number" id="height" required min="0" step="0.1">
+            </div>
+
+            <div id="height-ft-group" style="display: none;">
+                <label for="height-ft">Height:</label>
+                <div class="ft-in-row">
+                    <div class="ft-in-field">
+                        <input type="number" id="height-ft" min="0" step="1" placeholder="0">
+                        <span class="unit-badge">ft</span>
+                    </div>
+                    <div class="ft-in-field">
+                        <input type="number" id="height-in" min="0" max="11" step="0.1" placeholder="0">
+                        <span class="unit-badge">in</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

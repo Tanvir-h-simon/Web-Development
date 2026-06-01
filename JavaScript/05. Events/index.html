@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="onLoad()">
+    <button onclick="subscribe()" id="subscribeBtn">Subscribe</button>
+    <h2 id="subsTxt">Not subscribed</h2>
+    <button ondblclick="Love()" id="loveBtn">Love</button>
+    <h2 id="loveTxt">Not Loved</h2>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="keyPress(); return false;">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <h2 id="keyPressTxt">Not logged In</h2>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
