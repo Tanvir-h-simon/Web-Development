@@ -1,0 +1,2 @@
+Hello, this is an example file!
+This line is appended to the file.

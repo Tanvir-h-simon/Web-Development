@@ -1,0 +1,237 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.
+Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.
+Node.js lets developers use JavaScript to write command line tools and for server-side scripting.
+The functionality of running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
+
+Streams in Node.js are objects that let you read data from a source or write data to a destination in continuous fashion.
+There are four types of streams in Node.js: Readable, Writable, Duplex, and Transform.
+Readable streams are streams from which data can be read. Examples include fs.createReadStream().
+Writable streams are streams to which data can be written. Examples include fs.createWriteStream().
+Duplex streams are both Readable and Writable. Examples include net.Socket.
+Transform streams are Duplex streams that can modify or transform data as it is written and read. Examples include zlib.createDeflate().
+
+Buffers in Node.js are used to handle binary data. A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.
+Buffer objects are used to represent a fixed-length sequence of bytes. Many Node.js APIs support Buffers.
+The Buffer class is a subclass of JavaScript's Uint8Array class and extends it with methods that cover additional use cases.
+
+The fs (filesystem) module allows you to work with the file system on your computer.
+Common operations: read files, create files, update files, delete files, rename files.
+fs.readFile() reads the entire file into memory before returning the data, which is problematic for large files.
+fs.createReadStream() reads the file in chunks, making it memory efficient for large files.
+
+Event-driven architecture is at the core of Node.js. The EventEmitter class is the foundation for many Node.js core modules.
+Events are emitted and listeners handle those events asynchronously.
+This non-blocking I/O model makes Node.js very efficient and suitable for I/O-intensive applications.
+
+The HTTP module in Node.js allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+To include the HTTP module, use the require() method: var http = require('http').
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over HTTP.
+
+Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
+Express provides a thin layer of fundamental web application features, without obscuring Node.js features.
+
+MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program.
+MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License.
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+
+Asynchronous programming in JavaScript allows you to perform long network requests without blocking the main thread.
+Callbacks were the original way to handle async operations, but they led to "callback hell" with deeply nested code.
+Promises provided a cleaner way to handle async operations and chain multiple operations together.
+Async/await, introduced in ES2017, makes async code look and behave more like synchronous code, making it easier to understand.
+
+The package.json file is the heart of any Node project. It records important metadata about a project.
+It also defines functional attributes of a project that npm uses to install dependencies, run scripts, and identify the entry point to the package.
+npm (Node Package Manager) is the world's largest software registry. Open source developers use npm to share software.
+
+REST (Representational State Transfer) is an architectural style for distributed hypermedia systems.
+RESTful APIs use HTTP requests to perform CRUD operations: Create (POST), Read (GET), Update (PUT/PATCH), Delete (DELETE).
+Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error.
+
+Security in Node.js applications is crucial. Common vulnerabilities include SQL injection, XSS, CSRF, and insecure deserialization.
+Always validate and sanitize user input. Use HTTPS for all communications. Keep dependencies up to date.
+Use helmet.js to set security-related HTTP headers. Implement rate limiting to prevent abuse.
+
+Performance optimization in Node.js: use clustering to take advantage of multi-core systems.
+Use caching (Redis, Memcached) to reduce database load. Optimize database queries with proper indexing.
+Use compression middleware (gzip) to reduce response sizes. Implement lazy loading where appropriate.
+
+WebSockets provide full-duplex communication channels over a single TCP connection.
+Socket.io is a JavaScript library for real-time web applications. It enables real-time, bidirectional, event-based communication.
+WebSockets are ideal for chat applications, live notifications, real-time dashboards, and multiplayer games.
+
+Microservices architecture structures an application as a collection of small autonomous services.
+Each service is self-contained and implements a single business capability. Services communicate via APIs.
+Docker and Kubernetes are commonly used to containerize and orchestrate microservices.
+
+Testing in Node.js: unit tests, integration tests, and end-to-end tests.
+Popular testing frameworks: Jest, Mocha, Chai, Jasmine, AVA.
+Test-driven development (TDD) involves writing tests before writing the actual code.
+
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+GraphQL gives clients the power to ask for exactly what they need and nothing more.
+Apollo Server is the best way to quickly build a production-ready, self-documenting GraphQL API.
+
+TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+TypeScript adds optional static typing and class-based object-oriented programming to the language.
+Using TypeScript with Node.js improves code quality, maintainability, and developer experience.
+
+Middleware in Express.js are functions that have access to the request object, response object, and the next function.
+Middleware can execute any code, make changes to the request and response objects, end the request-response cycle.
+Common middleware: body-parser, cors, morgan (logging), compression, helmet.
+
+Environment variables are used to configure Node.js applications for different environments (development, staging, production).
+The dotenv package loads environment variables from a .env file into process.env.
+Never commit sensitive environment variables (API keys, database passwords) to version control.
+
+Cron jobs in Node.js can be scheduled using packages like node-cron or agenda.
+These allow you to run tasks at specific intervals, such as sending daily emails or cleaning up old data.
+Worker threads in Node.js allow JavaScript to run in parallel, useful for CPU-intensive tasks.
+
+The crypto module provides cryptographic functionality including a set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify functions.
+Common use cases: hashing passwords with bcrypt, generating secure tokens, encrypting sensitive data.
+
+Logging is essential for debugging and monitoring Node.js applications in production.
+Popular logging libraries: Winston, Bunyan, Pino, Morgan.
+Structured logging (JSON format) makes it easier to search and analyze logs.
+
+Database connections in Node.js should use connection pooling to improve performance.
+Always handle database errors gracefully and implement retry logic for transient failures.
+Use transactions when performing multiple related database operations that must all succeed or fail together.
+
+Process management in Node.js production environments: PM2 is a daemon process manager.
+PM2 can keep your application alive forever, reload it without downtime, and facilitate common devops tasks.
+Alternatively, use Docker with orchestration tools like Kubernetes or Docker Swarm.
+
+The child_process module enables spawning child processes in Node.js.
+spawn, exec, execFile, and fork are the four main methods for creating child processes.
+Use child processes for running shell commands, CPU-intensive tasks, or isolating code.
+
+Streams are very important for building high-performance Node.js applications.
+Instead of reading a large file entirely into memory, streams allow you to process data piece by piece.
+This reduces memory usage significantly and allows you to start processing data before the entire file is loaded.
+Piping streams together allows for elegant data transformation pipelines.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.
+Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.
+Node.js lets developers use JavaScript to write command line tools and for server-side scripting.
+The functionality of running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
+
+Streams in Node.js are objects that let you read data from a source or write data to a destination in continuous fashion.
+There are four types of streams in Node.js: Readable, Writable, Duplex, and Transform.
+Readable streams are streams from which data can be read. Examples include fs.createReadStream().
+Writable streams are streams to which data can be written. Examples include fs.createWriteStream().
+Duplex streams are both Readable and Writable. Examples include net.Socket.
+Transform streams are Duplex streams that can modify or transform data as it is written and read. Examples include zlib.createDeflate().
+
+Buffers in Node.js are used to handle binary data. A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.
+Buffer objects are used to represent a fixed-length sequence of bytes. Many Node.js APIs support Buffers.
+The Buffer class is a subclass of JavaScript's Uint8Array class and extends it with methods that cover additional use cases.
+
+The fs (filesystem) module allows you to work with the file system on your computer.
+Common operations: read files, create files, update files, delete files, rename files.
+fs.readFile() reads the entire file into memory before returning the data, which is problematic for large files.
+fs.createReadStream() reads the file in chunks, making it memory efficient for large files.
+
+Event-driven architecture is at the core of Node.js. The EventEmitter class is the foundation for many Node.js core modules.
+Events are emitted and listeners handle those events asynchronously.
+This non-blocking I/O model makes Node.js very efficient and suitable for I/O-intensive applications.
+
+The HTTP module in Node.js allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+To include the HTTP module, use the require() method: var http = require('http').
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over HTTP.
+
+Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
+Express provides a thin layer of fundamental web application features, without obscuring Node.js features.
+
+MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program.
+MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License.
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+
+Asynchronous programming in JavaScript allows you to perform long network requests without blocking the main thread.
+Callbacks were the original way to handle async operations, but they led to "callback hell" with deeply nested code.
+Promises provided a cleaner way to handle async operations and chain multiple operations together.
+Async/await, introduced in ES2017, makes async code look and behave more like synchronous code, making it easier to understand.
+
+The package.json file is the heart of any Node project. It records important metadata about a project.
+It also defines functional attributes of a project that npm uses to install dependencies, run scripts, and identify the entry point to the package.
+npm (Node Package Manager) is the world's largest software registry. Open source developers use npm to share software.
+
+REST (Representational State Transfer) is an architectural style for distributed hypermedia systems.
+RESTful APIs use HTTP requests to perform CRUD operations: Create (POST), Read (GET), Update (PUT/PATCH), Delete (DELETE).
+Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error.
+
+Security in Node.js applications is crucial. Common vulnerabilities include SQL injection, XSS, CSRF, and insecure deserialization.
+Always validate and sanitize user input. Use HTTPS for all communications. Keep dependencies up to date.
+Use helmet.js to set security-related HTTP headers. Implement rate limiting to prevent abuse.
+
+Performance optimization in Node.js: use clustering to take advantage of multi-core systems.
+Use caching (Redis, Memcached) to reduce database load. Optimize database queries with proper indexing.
+Use compression middleware (gzip) to reduce response sizes. Implement lazy loading where appropriate.
+
+WebSockets provide full-duplex communication channels over a single TCP connection.
+Socket.io is a JavaScript library for real-time web applications. It enables real-time, bidirectional, event-based communication.
+WebSockets are ideal for chat applications, live notifications, real-time dashboards, and multiplayer games.
+
+Microservices architecture structures an application as a collection of small autonomous services.
+Each service is self-contained and implements a single business capability. Services communicate via APIs.
+Docker and Kubernetes are commonly used to containerize and orchestrate microservices.
+
+Testing in Node.js: unit tests, integration tests, and end-to-end tests.
+Popular testing frameworks: Jest, Mocha, Chai, Jasmine, AVA.
+Test-driven development (TDD) involves writing tests before writing the actual code.
+
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+GraphQL gives clients the power to ask for exactly what they need and nothing more.
+Apollo Server is the best way to quickly build a production-ready, self-documenting GraphQL API.
+
+TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+TypeScript adds optional static typing and class-based object-oriented programming to the language.
+Using TypeScript with Node.js improves code quality, maintainability, and developer experience.
+
+Middleware in Express.js are functions that have access to the request object, response object, and the next function.
+Middleware can execute any code, make changes to the request and response objects, end the request-response cycle.
+Common middleware: body-parser, cors, morgan (logging), compression, helmet.
+
+Environment variables are used to configure Node.js applications for different environments (development, staging, production).
+The dotenv package loads environment variables from a .env file into process.env.
+Never commit sensitive environment variables (API keys, database passwords) to version control.
+
+Cron jobs in Node.js can be scheduled using packages like node-cron or agenda.
+These allow you to run tasks at specific intervals, such as sending daily emails or cleaning up old data.
+Worker threads in Node.js allow JavaScript to run in parallel, useful for CPU-intensive tasks.
+
+The crypto module provides cryptographic functionality including a set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify functions.
+Common use cases: hashing passwords with bcrypt, generating secure tokens, encrypting sensitive data.
+
+Logging is essential for debugging and monitoring Node.js applications in production.
+Popular logging libraries: Winston, Bunyan, Pino, Morgan.
+Structured logging (JSON format) makes it easier to search and analyze logs.
+
+Database connections in Node.js should use connection pooling to improve performance.
+Always handle database errors gracefully and implement retry logic for transient failures.
+Use transactions when performing multiple related database operations that must all succeed or fail together.
+
+Process management in Node.js production environments: PM2 is a daemon process manager.
+PM2 can keep your application alive forever, reload it without downtime, and facilitate common devops tasks.
+Alternatively, use Docker with orchestration tools like Kubernetes or Docker Swarm.
+
+The child_process module enables spawning child processes in Node.js.
+spawn, exec, execFile, and fork are the four main methods for creating child processes.
+Use child processes for running shell commands, CPU-intensive tasks, or isolating code.
+
+Streams are very important for building high-performance Node.js applications.
+Instead of reading a large file entirely into memory, streams allow you to process data piece by piece.
+This reduces memory usage significantly and allows you to start processing data before the entire file is loaded.
+Piping streams together allows for elegant data transformation pipelines.
