@@ -1,0 +1,20 @@
+node_modules/
+
+# Data files — keep the folder structure but not real user data
+.data/users/*.json
+.data/tokens/*.json
+.data/checks/*.json
+
+# Environment / secrets
+.env
+config.local.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
