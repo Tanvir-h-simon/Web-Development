@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+
+  <div class="w-full max-w-sm mx-auto px-6 text-center">
+
+    <h1 class="text-4xl font-extrabold text-indigo-400 mb-1">Guess the Number</h1>
+    <p class="text-gray-400 text-sm mb-8">I'm thinking of a number between <span class="text-white font-semibold">1</span> and <span class="text-white font-semibold">100</span></p>
+
+    <!-- Attempts -->
+    <div class="bg-gray-800 rounded-2xl px-6 py-4 mb-6 flex justify-between items-center">
+      <span class="text-gray-400 text-sm">Attempts</span>
+      <span id="attempts" class="text-2xl font-bold text-indigo-400">0</span>
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback" class="h-10 flex items-center justify-center mb-4">
+      <span class="text-gray-500 text-sm">Make your first guess!</span>
+    </div>
+
+    <!-- Input + Button -->
+    <div id="game-controls" class="flex gap-3">
+      <input
+        id="guess-input"
+        type="number"
+        min="1"
+        max="100"
+        placeholder="Enter guess..."
+        class="flex-1 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-center text-lg focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+      />
+      <button
+        onclick="submitGuess()"
+        class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-5 py-3 rounded-xl transition-colors cursor-pointer"
+      >
+        Guess
+      </button>
+    </div>
+
+    <!-- Play Again (hidden initially) -->
+    <button
+      id="play-again"
+      onclick="resetGame()"
+      class="hidden mt-4 w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-xl transition-colors cursor-pointer"
+    >
+      Play Again
+    </button>
+
+    <!-- Hint bar -->
+    <div id="hint-bar" class="mt-8 h-2 rounded-full bg-gray-800 overflow-hidden">
+      <div id="hint-fill" class="h-full w-1/2 bg-indigo-600 rounded-full transition-all duration-500"></div>
+    </div>
+    <div class="flex justify-between text-xs text-gray-600 mt-1">
+      <span>1</span>
+      <span>100</span>
+    </div>
+
+  </div>
+
+  <script>
+    let secret = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    const feedbackEl  = document.getElementById('feedback');
+    const attemptsEl  = document.getElementById('attempts');
+    const input       = document.getElementById('guess-input');
+    const hintFill    = document.getElementById('hint-fill');
+    const playAgain   = document.getElementById('play-again');
+    const controls    = document.getElementById('game-controls');
+
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') submitGuess(); });
+
+    function submitGuess() {
+      const guess = parseInt(input.value);
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        setFeedback('Enter a number between 1 and 100.', 'text-yellow-400');
+        return;
+      }
+
+      attempts++;
+      attemptsEl.textContent = attempts;
+      hintFill.style.width = ((guess - 1) / 99 * 100) + '%';
+
+      if (guess === secret) {
+        setFeedback(`🎉 Correct! You got it in ${attempts} ${attempts === 1 ? 'try' : 'tries'}!`, 'text-green-400 font-semibold text-base');
+        controls.classList.add('opacity-50', 'pointer-events-none');
+        playAgain.classList.remove('hidden');
+      } else if (guess < secret) {
+        setFeedback('Too low! Try higher. ↑', 'text-blue-400');
+      } else {
+        setFeedback('Too high! Try lower. ↓', 'text-red-400');
+      }
+
+      input.value = '';
+      input.focus();
+    }
+
+    function setFeedback(msg, classes) {
+      feedbackEl.innerHTML = `<span class="${classes}">${msg}</span>`;
+    }
+
+    function resetGame() {
+      secret = Math.floor(Math.random() * 100) + 1;
+      attempts = 0;
+      attemptsEl.textContent = '0';
+      hintFill.style.width = '50%';
+      setFeedback('<span class="text-gray-500 text-sm">Make your first guess!</span>', '');
+      controls.classList.remove('opacity-50', 'pointer-events-none');
+      playAgain.classList.add('hidden');
+      input.value = '';
+      input.focus();
+    }
+  </script>
+
+</body>
+</html>
